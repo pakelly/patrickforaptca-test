@@ -1,0 +1,491 @@
+/* ===== Base Reset & Typography ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #2B5F3F;      /* Forest green - growth, community */
+  --color-primary-light: #3A7A54;
+  --color-primary-dark: #1E4530;
+  --color-accent: #D4A847;        /* Warm gold - warmth, approachability */
+  --color-bg: #FAFAF7;            /* Warm off-white */
+  --color-bg-alt: #F0EDE6;        /* Slightly warmer for alternating sections */
+  --color-text: #2C2C2C;
+  --color-text-light: #5A5A5A;
+  --color-white: #FFFFFF;
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 960px;
+  --section-padding: 5rem 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  color: var(--color-white);
+  text-align: center;
+  padding: 8rem 1.5rem 6rem;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent);
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  padding: 0.85rem 2.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #e0b64f;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: var(--color-primary-dark);
+}
+
+/* ===== Election Callout Box ===== */
+.election-callout {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  align-self: start;
+}
+
+.election-callout h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.callout-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.callout-highlight {
+  background: rgba(212, 168, 71, 0.15);
+  border-color: var(--color-accent);
+}
+
+.callout-date {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.callout-event {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.callout-note {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.tentative {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--color-text-light);
+  max-width: 650px;
+  margin: -0.5rem auto 2rem;
+  font-size: 1.05rem;
+}
+
+/* ===== About ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-grid-3col {
+  display: grid;
+  grid-template-columns: 250px 1fr 220px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Values / Platform ===== */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.value-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ===== Community Involvement ===== */
+.involvement-list {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.involvement-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.involvement-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ===== Endorsements ===== */
+.endorsements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.endorsement {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--color-accent);
+}
+
+.endorsement p {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.endorsement cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.endorsement-note {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* ===== Big Quote ===== */
+.big-quote {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.big-quote p {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+/* ===== Election Details ===== */
+.election-details-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.election-detail-card {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.election-detail-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.detail-date {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.detail-time {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.election-detail-info p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+.election-detail-info p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .election-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .election-detail-card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Contact ===== */
+#contact {
+  text-align: center;
+}
+
+#contact > .container > p:first-of-type {
+  max-width: 550px;
+  margin: -0.5rem auto 2rem;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+}
+
+.contact-info {
+  display: inline-block;
+  text-align: left;
+}
+
+.contact-info p {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+footer p {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  opacity: 0.6 !important;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .about-grid,
+  .about-grid-3col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-photo {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .election-callout {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .endorsements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-quote p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+}
