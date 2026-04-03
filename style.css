@@ -312,6 +312,20 @@ a:hover {
   line-height: 1.6;
 }
 
+/* ===== Questions Form ===== */
+.form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.form-wrapper iframe {
+  display: block;
+}
+
 /* ===== Community Involvement ===== */
 .involvement-list {
   max-width: 700px;
